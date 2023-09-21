@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Main-Grocery
+{% endblock %}
+
+{% block content %}
+    <h1>Products</h1>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Buy</th>
+        </tr>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.quantity }}</td>
+                <td><a href="/buy/{{ product.id }}">Buy</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block style%}
